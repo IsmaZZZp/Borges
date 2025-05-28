@@ -1,11 +1,11 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> Veterinaria Borges </title>
+    <title>Veterinaria Borges</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
-            background-color: #f0f8ff;
+            background-color: grey;
             color: #333;
             font-family: 'Segoe UI', sans-serif;
             margin: 20px;
@@ -16,73 +16,132 @@
         }
 
         h1 {
-            color: #2a7f62;
+            color: blue;
             text-align: center;
         }
 
-        marquee {
-            color: #d35400;
+        nav {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        aside {
-            background-color: #e8f5e9;
+        nav a {
+            color: blue;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        section {
+            display: none;
+        }
+
+        .activo {
+            display: block;
+        }
+
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .producto {
+            width: 270px;
+            background-color: white;
             padding: 10px;
-            border-left: 5px solid #2a7f62;
+            border: 1px solid #2a7f62;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-<main>
-    <h1> Bienvenidos a Veterinaria Borges </h1>
 
-    <h2> ¿Quiénes somos? </h2>
-    <p>Veterinaria Borges es una veterinaria dedicada al bienestar de tus mascotas.</p>
+    <h1>Bienvenidos a Veterinaria Borges</h1>
 
-    <article>
-        <h3> Servicios destacados </h3>
-        <dl>
-            <dt> Consulta general </dt>
-            <dd> Evaluación médica integral para perros, gatos y mascotas exóticas. </dd>
+    <nav>
+        <a onclick="mostrar('quienes')">¿Quiénes somos?</a>
+        <a onclick="mostrar('servicios')">Servicios</a>
+        <a onclick="mostrar('fecha')">Fecha de apertura</a>
+        <a onclick="mostrar('fundadores')">Fundadores</a>
+        <a onclick="mostrar('catalogo')">Catálogo</a>
+    </nav>
 
-            <dt> Vacunación </dt>
-            <dd> Esquemas de vacunación para mantener a tu mascota protegida. </dd>
+    <main>
+        <section id="quienes" class="activo">
+            <h2>¿Quiénes somos?</h2>
+            <p>Veterinaria Borges es una veterinaria dedicada al bienestar de tus mascotas.</p>
+        </section>
 
-            <dt> Cirugía menor </dt>
-            <dd> Procedimientos ambulatorios realizados con estrictas medidas de higiene. </dd>
-        </dl>
-    </article>
+        <section id="servicios">
+            <h3>Servicios destacados</h3>
+            <dl>
+                <dt>Consulta general</dt>
+                <dd>Evaluación médica integral para perros, gatos y mascotas exóticas.</dd>
 
-    <details>
-        <summary> Servicios adicionales </summary>
-        <ol>
-            <li> Atencon canina </li>
-            <li> Estética felina </li>
-            <li> Venta de accesorios </li>
-            <li> Vacunas para mascotas </li>
-            <li> Atención a domicilio </li>
-        </ol>
-    </details>
+                <dt>Vacunación</dt>
+                <dd>Esquemas de vacunación para mantener a tu mascota protegida.</dd>
 
-    <section>
-        <h3> Fecha de apertura </h3>
-        <p> Abierta desde el <time datetime="2018-03-01">1 de marzo de 2018</time> </p>
-    </section>
+                <dt>Cirugía menor</dt>
+                <dd>Procedimientos ambulatorios realizados con estrictas medidas de higiene.</dd>
+            </dl>
 
-    <section>
-        <h3> Fundadores </h3>
-        <p> Fundada por Patitas Felices S.A. de C.V.<sup>®️</sup> </p>
-    </section>
+            <details>
+                <summary>Servicios adicionales</summary>
+                <ol>
+                    <li>Atención canina</li>
+                    <li>Estética felina</li>
+                    <li>Venta de accesorios</li>
+                    <li>Vacunas para mascotas</li>
+                    <li>Atención a domicilio</li>
+                </ol>
+            </details>
+        </section>
 
-    <big> ¡Cuidamos a tus mascotas como si fueran nuestras! </big>
+        <section id="fecha">
+            <h3>Fecha de apertura</h3>
+            <p>Abierta desde el <time datetime="2018-03-01">1 de marzo de 2018</time></p>
+        </section>
 
-    <marquee> ¡Consiente a tu mascota hoy mismo! </marquee>
+        <section id="fundadores">
+            <h3>Fundadores</h3>
+            <p>Fundada por Patitas Felices S.A. de C.V.<sup>®️</sup></p>
+        </section>
 
-    <aside>
-        <h3> Dato curioso </h3>
-        <p> Los perros pueden oler enfermedades como el cáncer o la diabetes. ¡Increíble!</p>
-    </aside>
+        <section id="catalogo">
+            <h2>Catálogo de Alimentos</h2>
+            <div class="catalogo">
+                <div class="producto">
+                    <h3>croquetas</h3>
+                    <p>Alimento seco y balanceado para perros adultos.</p>
+                    <p><strong>Precio:</strong> $270 MXN</p>
+                </div>
 
-    <progress value="100" max="100"></progress> 100% de amor y cuidado garantizado
-</main>
+                <div class="producto">
+                    <h3>Alimento Húmedo Gatitos</h3>
+                    <p>Ideal para el crecimiento y desarrollo saludable de gatitos.</p>
+                    <p><strong>Precio:</strong> $80 MXN</p>
+                </div>
+
+                <div class="producto">
+                    <h3>Snacks</h3>
+                    <p>Ayudan a mantener los dientes limpios y el aliento fresco.</p>
+                    <p><strong>Precio:</strong> $70 MXN</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function mostrar(id) {
+            const secciones = document.querySelectorAll('main section');
+            secciones.forEach(sec => sec.classList.remove('activo'));
+            document.getElementById(id).classList.add('activo');
+        }
+    </script>
+
 </body>
 </html>
