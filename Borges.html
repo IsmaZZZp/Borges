@@ -1,3 +1,4 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -56,11 +57,29 @@
             border: 1px solid #2a7f62;
             border-radius: 8px;
         }
+
+        /* Estilo para el botón */
+        button {
+            display: block;
+            margin: 10px auto 20px auto;
+            padding: 10px 20px;
+            background-color: #2a7f62;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #205e4c;
+        }
     </style>
 </head>
 <body>
 
     <h1>Bienvenidos a Veterinaria Borges</h1>
+    <button onclick="cambiarFondo()">Cambiar color de fondo</button>
 
     <nav>
         <a onclick="mostrar('quienes')">¿Quiénes somos?</a>
@@ -140,6 +159,23 @@
             const secciones = document.querySelectorAll('main section');
             secciones.forEach(sec => sec.classList.remove('activo'));
             document.getElementById(id).classList.add('activo');
+        }
+
+        window.onload = function() {
+            const nombre = prompt("¡Bienvenido a Veterinaria Borges! ¿Cuál es tu nombre?");
+            if (nombre) {
+                alert("Hola, " + nombre + ". Gracias por visitarnos.");
+            }
+        }
+
+        function cambiarFondo() {
+            const colores = ['lightblue', 'lightgreen', 'lightpink', 'lightyellow', 'white', 'grey'];
+            const colorActual = document.body.style.backgroundColor;
+            let nuevoColor;
+            do {
+                nuevoColor = colores[Math.floor(Math.random() * colores.length)];
+            } while (nuevoColor === colorActual);
+            document.body.style.backgroundColor = nuevoColor;
         }
     </script>
 
