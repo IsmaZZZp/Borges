@@ -1,4 +1,4 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -58,10 +58,9 @@
             border-radius: 8px;
         }
 
-        /* Estilo para el botón */
         button {
             display: block;
-            margin: 10px auto 20px auto;
+            margin: 10px auto 10px auto;
             padding: 10px 20px;
             background-color: #2a7f62;
             color: white;
@@ -74,20 +73,27 @@
         button:hover {
             background-color: #205e4c;
         }
+
+        #controles {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <h1>Bienvenidos a Veterinaria Borges</h1>
-    <button onclick="cambiarFondo()">Cambiar color de fondo</button>
+    <button onclick="toggleControles()">Mostrar/Ocultar Controles</button>
+    <div id="controles">
+        <button onclick="cambiarFondo()">Cambiar color de fondo</button>
 
-    <nav>
-        <a onclick="mostrar('quienes')">¿Quiénes somos?</a>
-        <a onclick="mostrar('servicios')">Servicios</a>
-        <a onclick="mostrar('fecha')">Fecha de apertura</a>
-        <a onclick="mostrar('fundadores')">Fundadores</a>
-        <a onclick="mostrar('catalogo')">Catálogo</a>
-    </nav>
+        <nav>
+            <a onclick="mostrar('quienes')">¿Quiénes somos?</a>
+            <a onclick="mostrar('servicios')">Servicios</a>
+            <a onclick="mostrar('fecha')">Fecha de apertura</a>
+            <a onclick="mostrar('fundadores')">Fundadores</a>
+            <a onclick="mostrar('catalogo')">Catálogo</a>
+        </nav>
+    </div>
 
     <main>
         <section id="quienes" class="activo">
@@ -176,6 +182,11 @@
                 nuevoColor = colores[Math.floor(Math.random() * colores.length)];
             } while (nuevoColor === colorActual);
             document.body.style.backgroundColor = nuevoColor;
+        }
+
+        function toggleControles() {
+            const controles = document.getElementById('controles');
+            controles.style.display = (controles.style.display === 'none' || controles.style.display === '') ? 'block' : 'none';
         }
     </script>
 
